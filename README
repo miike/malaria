@@ -1,26 +1,32 @@
-*Data
+## Data
 
-The data is courtesy of @paulylioja and comes from ChEMBL-NTD database. There's about 27000 compounds in there in SMILES format.
+The data is courtesy of @paulylioja and comes from ChEMBL-NTD database. There's about 27000 compounds in there in SMILES format. They have been run against the filters on http://pasilla.health.unm.edu/tomcat/biocomp/smartsfilter (using the verbose output).
+This generates a .smiles file and a boolean (true/false) output according to how a compound fares on a test. The boolean value has been converted to a bit below for processing ease.
 
-*CSV file
+## CSV file
 
 The CSV file consists of 15 columns of data. The first is the SMILES identifier for the compound, the next 11 are the names of each filter
 that the compound was run against. A pass (true) is denoted with a 1, and a fail with a 0.
 The final 4 columns show the number of passes, number of fails, and the respective rate of each (n/11).
 
-*Graph file(s)
+## Graph file(s)
 
 The graph files are present in 2 formats (Gephi and GraphML)
 
 The .gephi file can be opened natively using Gephi (gephi.org), an open source Java program for manipulating and visualising graphs.
 GraphML is XML based and can be imported into a wider range of software.
 
-*Graph structure
+## Graph structure
 
 The first 11 nodes represent each filter and consequently act as hubs. Each compound acts as a node, and if a given node passes a filter then an edge is generated between the node and the filter hub. 
 The hubs have ids from 1-11, while compounds run from 12-26794. 
 
-*Precautions
+## Precautions
 
 You'll need quite a bit of RAM if you want to visualise large numbers of nodes. The data contains ~27000 nodes and >200000 edges.
 Sidenote: If Gephi looks like it starts to crash, leave it for a while and it should ask if you want to increase double the amount of memory before it restarts.
+
+## Licensing
+
+Chemical structures in the dataset fall under the Creative Commons CC0 license (ChEMBL-NTD), as does the above .csv and associated graph files.
+You are free to use, modify, distribute, perform (with difficulty) and remix this work for commerical or non-commerical purposes.
